@@ -15,12 +15,12 @@ function App() {
       <div className="app-container">
         <div className="app-todo-container">
           {
-            todoList.map(item=>(
+            todoList.map(todo=>(
               <Todoitem 
-                name={item.item} 
-                done={item.done}
-                id={item.id}
-                key={item.id}
+                name={todo.item} 
+                done={todo.done}
+                id={todo.id}
+                key={todo.id}
               />
             ))
           }

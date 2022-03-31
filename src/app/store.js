@@ -1,4 +1,4 @@
-import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import todoSlice from '../features/todoSlice.js';
@@ -17,7 +17,7 @@ const persistedReducer = persistReducer(persistConfig, reducers)
 const store = configureStore({
   reducer: {
     todos: persistedReducer
-  }, middleware: getDefaultMiddleware({serializableCheck: false})
+  }
 });
 
 const persistor = persistStore(store)
